@@ -25,9 +25,8 @@ def is_small_prime(n):
 
 # Main prime number detection function, different methods are selected according to the size of the number
 def is_prime(n):
-    small_prime = is_small_prime(n)
-    if not small_prime:
-        return False
+    if n < 4:
+        return is_small_prime(n)
 
     if n < 10000:
         return eratosthenes_sieve(n)
